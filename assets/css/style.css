@@ -12,6 +12,7 @@ body {
     flex-direction: column;
     /* generic project styling */
     color: #3a3a3a;
+    font-family: lato, sans-serif;
 }
 
 /* header */
