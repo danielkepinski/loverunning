@@ -1,32 +1,33 @@
-/* import google font */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200..700&display=swap');
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
-/* wildcard */
+/* Asterisk wildcard selector to override default styles added by the browser */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-/* general styling */
+/* General styles */
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    /* generic project styling */
+    /* Generic project styles */
     color: #3a3a3a;
-    font-family: 'lato', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
-h1, h2, h3 {
-    font-family: 'oswald', sans-serif;
+h1,
+h2,
+h3 {
+    font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #252525;
 }
 
-
-/* header */
+/* Header */
 header {
     background-color: #ffffff;
     padding: 0 1rem;
@@ -44,15 +45,13 @@ header a {
     color: inherit;
 }
 
-
-
 #menu {
     font-size: 110%;
     letter-spacing: 4px;
     list-style-type: none;
 }
 
-#menu > li {
+#menu>li {
     margin-bottom: 1em;
 }
 
@@ -60,14 +59,14 @@ header a {
     border-bottom: 1px solid #3a3a3a;
 }
 
-/* navbar styles with dropdown toggle */
+/* Navbar styles with dropdown toggle */
 nav {
     position: absolute;
     background-color: #ffffff;
     width: 100%;
-    box-shadow: 0 2px 2px #3a3a3a;
     left: 0;
     padding: 0 1rem;
+    box-shadow: 0 2px 2px #3a3a3a;
     display: none;
     top: 100%;
 }
@@ -83,17 +82,41 @@ nav {
 
 .nav-toggle-label {
     font-size: 2rem;
-    }
+}
 
-/* main content */
+/* Main content */
 main {
-    
-    /* make main element take up surplus space */
+    /* Make main element take up any surplus space to push footer down */
     flex: 1 0 auto;
     margin-top: 47px;
 }
 
-/* reasons section */
+/* Hero section */
+#hero {
+    height: 600px;
+    width: 100%;
+    background: url("../images/hero-image.webp") no-repeat center center/cover;
+    position: relative;
+}
+
+#cover-text {
+    /* Final rgba value sets the opacity so it is semi-transparent */
+    background-color: rgba(241, 109, 107, .7);
+    font-size: 130%;
+    position: absolute;
+    bottom: 30px;
+    width: 80%;
+    min-height: 200px;
+    padding-top: 40px;
+    padding-left: 10px;
+}
+
+#cover-text>h2,
+#cover-text>h3 {
+    color: #ffffff;
+}
+
+/* Reasons section */
 #reasons {
     width: 90%;
     margin: 20px auto;
@@ -105,8 +128,8 @@ main {
     font-size: 280%;
 }
 
-#benefits-physical > div, 
-#benefits-mental > div {
+#benefits-physical>div,
+#benefits-mental>div {
     line-height: 20px;
     margin-bottom: 20px;
 }
@@ -120,7 +143,6 @@ main {
     margin: 5px 0;
 }
 
-/*reason image*/
 #circle-cover-bg {
     background: url('../images/reasons-image.webp') no-repeat top center / cover;
     height: 90vw;
@@ -132,33 +154,13 @@ main {
     max-height: 300px;
 }
 
-
-
-/* hero section */
-#hero {
-    height: 600px;
-    width: 100%;
-    background: url("../images/hero-image.webp") no-repeat center center/cover;
-    position: relative;
+#benefits-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#cover-text {
-    /* final rbg value sets opacity to semi transparent*/
-    background-color: rgba(241, 109, 107, .7);
-    font-size: 130%;
-    position: absolute;
-    bottom: 30px;
-    width: 80%;
-    min-height: 200px;
-    padding-top: 40px;
-    padding-left: 10px;
-}
-
-#cover-text > h2, #cover-text > h3 {
-    color: #ffffff;
-}
-
-/* footer */
+/* Footer */
 #social-networks {
     text-align: center;
     padding: 20px 0;
@@ -175,6 +177,7 @@ main {
 
 /* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
+
     /* Header */
     nav {
         display: block;
@@ -188,7 +191,7 @@ main {
         display: flex;
     }
 
-    #menu > li {
+    #menu>li {
         padding-left: 1rem;
     }
 
@@ -202,48 +205,47 @@ main {
         margin: 0 0.5rem;
     }
 
-
-    /* reasons section */
-#benefits-physical,
-#benefits-mental {
-    display: flex;
-    flex-direction: column;
-    width: 100%; 
-}
-
-#benefits-physical > div,
-#benefits-mental > div {
-width: 75%;
-}
-
-#benefits-mental > div {
-    text-align: end;
-    align-self: flex-end;
-}
-
-
-    /*main content*/
+    /* Main content */
     main {
-        /* push main content down to accom larger header */
-        margin-top: 80px;
-}
-/* hero */
-#cover-text {
-   width: 300px;
-   right: 50px; 
-}
+        /* Push main content down to accommodate larger header */
+        margin-top: 79px;
+    }
+
+    /* Hero */
+    #cover-text {
+        width: 300px;
+        right: 50px;
+    }
+
+    /* Reasons section */
+    #benefits-physical,
+    #benefits-mental {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #benefits-physical>div,
+    #benefits-mental>div {
+        width: 75%;
+    }
+
+    #benefits-mental>div {
+        text-align: end;
+        align-self: flex-end;
+    }
+
 }
 
 /* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
-    #menu a:hover{
+    #menu a:hover {
         border-bottom: 1px solid #3a3a3a;
     }
-}   
+}
 
-
-/* largest devices 1200px and above.) */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1200px) {    
+    /* Reasons section */
     #benefits {
         display: flex;
         flex-direction: row;
@@ -254,7 +256,7 @@ width: 75%;
     }
 
     #benefits-image {
-        order: 0;
+        order: 0
     }
 
     #benefits-mental {
@@ -268,4 +270,4 @@ width: 75%;
     #benefits-physical > div {
         align-self: flex-end;
     }
-}   
+}
